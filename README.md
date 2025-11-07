@@ -4,3 +4,5 @@ This is a simple tic tac toe game
 Author ~ Tusshar Singh
 <br>
 Languages used ~ HTML,CSS,JS
+<br>
+webite link ~ http://127.0.0.1:5500/
