@@ -1,0 +1,121 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    background-color: #548687;
+    text-align: center;
+
+}
+
+.container {
+    height: 70vh;
+    display: flex; 
+    justify-content: center;
+    align-items: center;
+}
+
+.game {
+    height: 60vmin;
+    width: 60vmin;;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    gap: 1.5vmin;
+}
+
+.box {
+     height: 18vmin;
+    width: 18vmin;
+    border-radius: 10px;
+    border: none;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 1);
+    font-size: 8vmin;
+    color: #b0413e;
+    background-color: #ffffc7;
+}  
+
+/* Specific colors for X and O. These classes are added/removed in JS. */
+.box.x {
+    color: #e63946; /* red-ish for X */
+    text-shadow: 0 0 8px rgba(230,57,70,0.35);
+    transition: color 180ms ease, text-shadow 180ms ease;
+}
+.box.o {
+    color: #1d3557; /* blue-ish for O */
+    text-shadow: 0 0 8px rgba(29,53,87,0.25);
+    transition: color 180ms ease, text-shadow 180ms ease;
+}
+
+.reset-btn {
+    margin-top: 20px;
+    padding: 1rem;
+    font-size: 1rem;
+    background-color: #191913;
+    color: white;
+    border-radius: 1rem;
+    border: none;
+}
+
+.new-btn {
+     margin-top: 20px;
+    padding: 1rem;
+    font-size: 1rem;
+    background-color: #191913;
+    color: white;
+    border-radius: 1rem;
+    border: none;
+}
+
+.msg {
+    height: 100vmin;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    gap: 1rem;
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    background-color: rgba(0, 0, 0, 0.8);
+    animation: slideIn 0.5s ease-out;
+}
+
+@keyframes slideIn {
+    from {
+        transform: translateY(-100%);
+        opacity: 0;
+    }
+    to {
+        transform: translateY(0);
+        opacity: 1;
+    }
+}
+
+.win {
+    font-size: 4rem;
+    color: #ffffc7;
+    animation: bounce 1s ease-out, glow 2s ease-in-out infinite;
+    text-shadow: 0 0 10px rgba(255, 255, 199, 0.5);
+}
+
+@keyframes bounce {
+    0% { transform: scale(0.3); opacity: 0; }
+    50% { transform: scale(1.2); }
+    70% { transform: scale(0.9); }
+    100% { transform: scale(1); opacity: 1; }
+}
+
+@keyframes glow {
+    0% { text-shadow: 0 0 10px rgba(255, 255, 199, 0.5); }
+    50% { text-shadow: 0 0 20px rgba(255, 255, 199, 0.8), 
+                       0 0 30px rgba(255, 255, 199, 0.6); }
+    100% { text-shadow: 0 0 10px rgba(255, 255, 199, 0.5); }
+}
+
+.hide {
+    display: none;
+}
